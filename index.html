@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tela de LOGIN</h1>
+    <hr>
+
+    <input type="button" id="btn" value="verificar" onclick="verficar()">
+    <p id="p1"></p>
+
+    <script>
+        function verficar(){
+            let tentativas = 1;
+
+            while(tentativas < 3){
+
+            let login = prompt("informe o seu login: " )  
+            if (login == null){
+                break;
+            }
+            let senha = prompt("informe a sua senha: " )
+            if (senha == null){
+                break;
+            }
+            
+               if (login == "abc" && senha == "123"){ 
+                alert("bem vindo") 
+                windon.location.href = "pagina2.html";
+                break;
+
+               } else {
+                alert("login incorreto")
+                tentativas++;
+               }
+            }   
+            
+            if(tentativas > 2){
+               document.getElementById("btn").disable = true;
+               document.getElementById("p1").innerText = "Tentativas excedidas" 
+               document.body.style.backgroundColor = "#2c9999"
+            
+               }
+
+        }
+    </script>
+</body>
+</html>
